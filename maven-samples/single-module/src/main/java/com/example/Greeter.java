@@ -14,6 +14,6 @@ public class Greeter {
 
   //TODO: Add javadoc comment
   public String greet(String someone) {
-    return String.format("Hello this si a test is tshifhiwa maven projects testing, %s!", someone);
+    return String.format("Hello this si a test is tshifhiwa maven projects testing check git hub, %s!", someone);
   }
 }
