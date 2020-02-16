@@ -28,8 +28,16 @@ pipeline {
                   }
             }
             stage('Deploy in Staging Environment') {
-                  build job: 'Deploy_Application_Staging'
+                  step{ 
+                       build job: 'Deploy_Application_Staging'
                   }
             }
-      }
+            stage('Deploy to production') {
+                  step{
+                        timeout(time:5,unit:'DAYS'){
+                              input message:'Approve Prouction Deployment?'
+                        }
+                      build job: 'Deploy_Application_Staging'
+                  }
+            }
 }
