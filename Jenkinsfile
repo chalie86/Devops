@@ -27,5 +27,9 @@ pipeline {
                         echo "Deploying in Production  postArea"
                   }
             }
+            stage('Deploy in Staging Environment') {
+                  build job: 'Deploy_Application_Staging'
+                  }
+            }
       }
 }
